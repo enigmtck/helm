@@ -1,0 +1,7 @@
+apiVersion: v2
+name: enigmatick
+description: Enigmatick Social Server
+type: application
+version: 0.1.0
+
+appVersion: "32"

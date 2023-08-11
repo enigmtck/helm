@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: faktory
+  name: faktory
+  namespace: {{ .Values.namespace }}
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      run: faktory
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: faktory
+    spec:
+      containers:
+        - image: contribsys/faktory:latest
+          imagePullPolicy: Always
+          name: faktory
+          command:
+            - "/faktory"
+            - "-b"
+            - ":7419"
+            - "-w"
+            - ":7420"
+            - "-e"
+            - "production"
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          env:
+            - name: FAKTORY_SKIP_PASSWORD
+              value: "true"
+          volumeMounts:
+            - mountPath: "/var/lib/faktory/db"
+              name: faktory-data
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "100m"
+      volumes:
+      - name: faktory-data
+        persistentVolumeClaim:
+          claimName: faktory-data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      securityContext: {}
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30

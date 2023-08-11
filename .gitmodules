@@ -1,0 +1,12 @@
+[submodule "containers/enigmatick-core"]
+	path = containers/enigmatick-core
+	url = git@gitlab.com:enigmatick/enigmatick-core.git
+[submodule "containers/enigmatick-migrations"]
+	path = containers/enigmatick-migrations
+	url = git@gitlab.com:enigmatick/migrations.git
+[submodule "containers/enigmatick-nginx"]
+	path = containers/enigmatick-nginx
+	url = git@gitlab.com:enigmatick/proxy.git
+[submodule "containers/enigmatick-web"]
+	path = containers/enigmatick-web
+	url = git@gitlab.com:enigmatick/enigmatick-web.git

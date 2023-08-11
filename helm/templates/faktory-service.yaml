@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: faktory-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    run: faktory
+  ports:
+    - name: faktory
+      protocol: TCP
+      port: 7419
+      targetPort: 7419
+    - name: faktory-admin
+      protocol: TCP
+      port: 7420
+      targetPort: 7420
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+
+
