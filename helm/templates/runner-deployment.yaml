@@ -51,6 +51,9 @@ spec:
               value: "false"
             - name: REGISTRATION_APPROVAL_REQUIRED
               value: "true"
+          volumeMounts:
+          - mountPath: "/srv/enigmatick/media"
+            name: media
           resources:
             requests:
               memory: "512Mi"
@@ -58,6 +61,10 @@ spec:
             limits:
               memory: "4Gi"
               cpu: "100m"
+      volumes:
+      - name: media
+        persistentVolumeClaim:
+          claimName: media
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {}
