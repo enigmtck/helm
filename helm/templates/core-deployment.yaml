@@ -30,7 +30,7 @@ spec:
           terminationMessagePolicy: File
           env:
             - name: RUST_LOG
-              value: "info"
+              value: "debug,html5ever=info"
             - name: ENIGMATICK_ROLE
               value: "server"
             - name: FAKTORY_URL
