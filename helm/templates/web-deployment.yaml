@@ -23,7 +23,7 @@ spec:
         run: web
     spec:
       containers:
-        - image: "localhost:32000/enigmatick-web:v{{ $.Chart.AppVersion }}"
+        - image: "localhost:32000/enigmatick-web:v{{ .Values.webVersion }}"
           imagePullPolicy: Always
           name: web
           terminationMessagePath: /dev/termination-log

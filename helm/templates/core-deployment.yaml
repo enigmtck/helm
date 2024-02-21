@@ -23,7 +23,7 @@ spec:
         run: core
     spec:
       containers:
-        - image: "localhost:32000/enigmatick-core:v{{ $.Chart.AppVersion }}"
+        - image: "localhost:32000/enigmatick-core:v{{ .Values.coreVersion }}"
           imagePullPolicy: Always
           name: core
           terminationMessagePath: /dev/termination-log
@@ -83,7 +83,7 @@ spec:
               cpu: "500m"
       initContainers:
         - name: migrations
-          image: "localhost:32000/enigmatick-migrations:v{{ $.Chart.AppVersion }}"
+          image: "localhost:32000/enigmatick-migrations:v{{ .Values.migrationsVersion }}"
           imagePullPolicy: Always
           env:
             - name: DATABASE_URL

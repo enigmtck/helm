@@ -23,7 +23,7 @@ spec:
         run: runner
     spec:
       containers:
-        - image: "localhost:32000/enigmatick-core:v{{ $.Chart.AppVersion }}"
+        - image: "localhost:32000/enigmatick-core:v{{ .Values.coreVersion }}"
           imagePullPolicy: Always
           name: runner
           terminationMessagePath: /dev/termination-log

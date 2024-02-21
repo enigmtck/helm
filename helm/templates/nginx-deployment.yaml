@@ -23,7 +23,7 @@ spec:
         run: nginx
     spec:
       containers:
-        - image: "localhost:32000/enigmatick-nginx:v{{ $.Chart.AppVersion }}"
+        - image: "localhost:32000/enigmatick-nginx:v{{ .Values.nginxVersion }}"
           imagePullPolicy: Always
           name: nginx
           terminationMessagePath: /dev/termination-log
