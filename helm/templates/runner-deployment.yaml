@@ -49,6 +49,8 @@ spec:
               value: "https://enigmatick.social"
             - name: SERVER_NAME
               value: "enigmatick.social"
+            - name: SYSTEM_USER
+              value: "system"
             - name: REGISTRATION_ENABLED
               value: "false"
             - name: REGISTRATION_APPROVAL_REQUIRED
