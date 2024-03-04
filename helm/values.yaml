@@ -2,9 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-coreVersion: "89"
+coreVersion: "96"
 nginxVersion: "65"
-webVersion: "75"
+webVersion: "76"
 
 replicaCount: 1
 
