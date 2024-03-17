@@ -33,14 +33,6 @@ spec:
               value: "debug,html5ever=info"
             - name: ENIGMATICK_ROLE
               value: "server"
-            - name: FAKTORY_URL
-              value: "tcp://faktory-service.enigmatick.svc.cluster.local:7419"
-            - name: AMQP_URL
-              value: "amqp://rabbit-service.enigmatick.svc.cluster.local:5672/%2f"
-            - name: AMQP_CONSUMER_TAG
-              value: "enigmatick_social"
-            - name: AMQP_QUEUE
-              value: "events"
             - name: MEDIA_DIR
               value: "/srv/enigmatick/media"
             - name: ROCKET_DATABASES
@@ -55,6 +47,8 @@ spec:
               value: "https://enigmatick.social"
             - name: SERVER_NAME
               value: "enigmatick.social"
+            - name: DEFAULT_AVATAR
+              value: "icons/robot-mask.png"
             - name: SYSTEM_USER
               value: "system"
             - name: REGISTRATION_ENABLED
