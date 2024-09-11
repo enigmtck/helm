@@ -67,6 +67,8 @@ spec:
               value: "https://gitlab.com/enigmatick"
             - name: INSTANCE_DESCRIPTION
               value: "Enigmatick is an in-development service that will enable strong end-to-end privacy and provide users an open platform to publish both long-form articles and brief status updates."
+            - name: SIGNING_OVERRIDE
+              value: "false"
           volumeMounts:
           - mountPath: "/srv/enigmatick/media"
             name: media
