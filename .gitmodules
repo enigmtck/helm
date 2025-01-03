@@ -10,3 +10,12 @@
 [submodule "containers/enigmatick-web"]
 	path = containers/enigmatick-web
 	url = git@gitlab.com:enigmatick/enigmatick-web.git
+[submodule "libs/activity_pub"]
+	path = libs/activity_pub
+	url = git@gitlab.com:enigmatick/activity_pub.git
+[submodule "libs/maybe_reference"]
+	path = libs/maybe_reference
+	url = git@gitlab.com:justindthomas/maybe_reference.git
+[submodule "libs/maybe_multiple"]
+	path = libs/maybe_multiple
+	url = git@gitlab.com:justindthomas/maybe_multiple.git
