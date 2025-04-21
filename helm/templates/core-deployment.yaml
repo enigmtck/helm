@@ -30,7 +30,7 @@ spec:
           terminationMessagePolicy: File
           env:
             - name: RUST_LOG
-              value: "info,html5ever=error,rocket=info,enigmatick=info,enigmatick::activity_pub::types::update=info"
+              value: "error,enigmatick::routes::inbox=info,enigmatick::models::cache"
             - name: ENIGMATICK_ROLE
               value: "server"
             - name: MEDIA_DIR
