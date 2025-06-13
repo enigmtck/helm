@@ -30,19 +30,19 @@ spec:
           terminationMessagePolicy: File
           env:
             - name: RUST_LOG
-              value: "error,enigmatick::routes::inbox=info,enigmatick::models::cache"
+              value: "error,enigmatick::routes::inbox=info,enigmatick::models::cache=debug,enigmatick::routes::api::image=debug"
             - name: ENIGMATICK_ROLE
               value: "server"
             - name: MEDIA_DIR
               value: "/srv/enigmatick/media"
             - name: ROCKET_DATABASES
-              value: "{enigmatick={url=\"postgres://enigmatick@database-xeon.inst.cns.jdt.io/enigmatick\"}}"
+              value: "{enigmatick={url=\"postgres://enigmatick:enigmatick@10.42.128.6/enigmatick\",pool_size=50}}"
             - name: ROCKET_PORT
               value: "8010"
             - name: ROCKET_ADDRESS
               value: "0.0.0.0"
             - name: DATABASE_URL
-              value: "postgres://enigmatick@database-xeon.inst.cns.jdt.io/enigmatick"
+              value: "postgres://enigmatick:enigmatick@10.42.128.6/enigmatick"
             - name: SERVER_URL
               value: "https://enigmatick.social"
             - name: SERVER_NAME
@@ -82,7 +82,7 @@ spec:
       volumes:
       - name: media
         persistentVolumeClaim:
-          claimName: media
+          claimName: media-tnas
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext: {}
