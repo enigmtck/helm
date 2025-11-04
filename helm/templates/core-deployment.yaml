@@ -30,29 +30,25 @@ spec:
           terminationMessagePolicy: File
           env:
             - name: RUST_LOG
-              value: "error,enigmatick::routes::inbox=info,enigmatick::models::cache=debug,enigmatick::routes::api::image=debug"
+              value: "enigmatick,tasks,proxy"
+            - name: ACME_EMAILS
+              value: "[\"justin@jdt.io\"]"
+            - name: ACME_PROXY
+              value: "false"
             - name: ENIGMATICK_ROLE
               value: "server"
             - name: MEDIA_DIR
               value: "/srv/enigmatick/media"
-            - name: ROCKET_DATABASES
-              value: "{enigmatick={url=\"postgres://enigmatick:enigmatick@10.42.128.6/enigmatick\",pool_size=50}}"
-            - name: ROCKET_PORT
-              value: "8010"
-            - name: ROCKET_ADDRESS
-              value: "0.0.0.0"
+            - name: SERVER_ADDRESS
+              value: "0.0.0.0:8010"
             - name: DATABASE_URL
               value: "postgres://enigmatick:enigmatick@10.42.128.6/enigmatick"
-            - name: SERVER_URL
-              value: "https://enigmatick.social"
             - name: SERVER_NAME
               value: "enigmatick.social"
-            - name: DEFAULT_AVATAR
-              value: "icons/robot-mask.png"
             - name: SYSTEM_USER
               value: "system"
             - name: REGISTRATION_ENABLED
-              value: "true"
+              value: "false"
             - name: REGISTRATION_APPROVAL_REQUIRED
               value: "true"
             - name: REGISTRATION_MESSAGE
